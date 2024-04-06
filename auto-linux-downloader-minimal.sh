@@ -34,12 +34,12 @@ wget -r --no-directories --no-parent -A "*.torrent" $ubuntu/$release/ -P $torren
 
 #Debian DVD amd64 
 debian=ftp://cdimage.debian.org/cdimage/release/current/amd64/bt-dvd/
-wget -r --no-directories --no-parent -A "*netinst*" -R "*[update,edu,mac]*" $debian/ -P $torrent_location/
+wget -r --no-directories --no-parent -A "*netinst*" -R "*update*,*edu*,*mac*" $debian/ -P $torrent_location/
 
 
 #Debian CD amd64 
 debian=ftp://cdimage.debian.org/cdimage/release/current/amd64/bt-cd/
-wget -r --no-directories --no-parent -A "*netinst*" -R "*[update,edu,mac]*" $debian/ -P $torrent_location/
+wget -r --no-directories --no-parent -A "*netinst*" -R "*update*,*edu*,*mac*" $debian/ -P $torrent_location/
 
 
 ################# HTTP ##################
@@ -59,3 +59,13 @@ wget -r --no-directories --no-parent -A "*.torrent" https://geo.mirror.pkgbuild.
 
 #Tails
 wget -r --no-directories --no-parent -A "*.torrent" https://tails.net/torrents/files/ -P $torrent_location/
+
+
+#Remove Unwanted Arch's
+#rm $torrent_location/*i386*
+#rm $torrent_location/*amd64*
+#rm $torrent_location/*x86_64*
+#rm $torrent_location/*arm*
+#rm $torrent_location/*ppc64le*
+#rm $torrent_location/*aarch64*
+#rm $torrent_location/*s390x*

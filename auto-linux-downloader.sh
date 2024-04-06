@@ -33,22 +33,22 @@ wget -r --no-directories --no-parent -A "*.torrent" $ubuntu/$release/ -P $torren
 
 #Debian DVD amd64 
 debian=ftp://cdimage.debian.org/cdimage/release/current/amd64/bt-dvd/
-wget -r --no-directories --no-parent -A "*.torrent" -R "*[update,edu,mac]*" $debian/ -P $torrent_location/
+wget -r --no-directories --no-parent -A "*.torrent" -R "*update*,*edu*,*mac*" $debian/ -P $torrent_location/
 
 
 #Debian CD amd64 
 debian=ftp://cdimage.debian.org/cdimage/release/current/amd64/bt-cd/
-wget -r --no-directories --no-parent -A "*netinst*" -R "*[update,edu,mac]*" $debian/ -P $torrent_location/
+wget -r --no-directories --no-parent -A "*netinst*" -R "*update*,*edu*,*mac*" $debian/ -P $torrent_location/
 
 
 #Debian DVD i386
 debian=ftp://cdimage.debian.org/cdimage/release/current/i386/bt-dvd/
-wget -r --no-directories --no-parent -A "*.torrent" -R "*[update,edu,mac]*" $debian/ -P $torrent_location/
+wget -r --no-directories --no-parent -A "*.torrent" -R "*update*,*edu*,*mac*" $debian/ -P $torrent_location/
 
 
 #Debian CD i386
 debian=ftp://cdimage.debian.org/cdimage/release/current/i386/bt-cd/
-wget -r --no-directories --no-parent -A "*netinst*" -R "*[update,edu,mac]*" $debian/ -P $torrent_location/
+wget -r --no-directories --no-parent -A "*netinst*" -R "*update*,*edu*,*mac*" $debian/ -P $torrent_location/
 
 
 ################# HTTP ##################
@@ -59,23 +59,23 @@ wget http://downloads.raspberrypi.org/raspbian_latest.torrent -O $torrent_locati
 
 
 #Fedora 
-wget -r --no-directories --no-parent -A "Fedora-Workstation*.torrent" -R "*[Alpha,Beta]*" http://torrent.fedoraproject.org -P $torrent_location/
-wget -r --no-directories --no-parent -A "Fedora-Server*.torrent" -R  "*[Alpha,Beta]*" http://torrent.fedoraproject.org -P $torrent_location/
+wget -r --no-directories --no-parent -A "Fedora-Workstation*.torrent" -R "*Alpha*,*Beta*" http://torrent.fedoraproject.org -P $torrent_location/
+wget -r --no-directories --no-parent -A "Fedora-Server*.torrent" -R  "*Alpha*,*Beta*" http://torrent.fedoraproject.org -P $torrent_location/
 
 #Fedora Spins
-wget -r --no-directories --no-parent -A "Fedora-KDE-*.torrent" -R  "*[Alpha,Beta]*" http://torrent.fedoraproject.org -P $torrent_location/
-wget -r --no-directories --no-parent -A "Fedora-Budgie-*.torrent" -R  "*[Alpha,Beta]*" http://torrent.fedoraproject.org -P $torrent_location/
-wget -r --no-directories --no-parent -A "Fedora-LXDE-*.torrent" -R  "*[Alpha,Beta]*" http://torrent.fedoraproject.org -P $torrent_location/
-wget -r --no-directories --no-parent -A "Fedora-LXQt-*.torrent" -R  "*[Alpha,Beta]*" http://torrent.fedoraproject.org -P $torrent_location/
-wget -r --no-directories --no-parent -A "Fedora-MATE-*.torrent" -R  "*[Alpha,Beta]*" http://torrent.fedoraproject.org -P $torrent_location/
-wget -r --no-directories --no-parent -A "Fedora-SoaS-*.torrent" -R  "*[Alpha,Beta]*" http://torrent.fedoraproject.org -P $torrent_location/
-wget -r --no-directories --no-parent -A "Fedora-Sway-*.torrent" -R  "*[Alpha,Beta]*" http://torrent.fedoraproject.org -P $torrent_location/
-wget -r --no-directories --no-parent -A "Fedora-Xfce-*.torrent" -R  "*[Alpha,Beta]*" http://torrent.fedoraproject.org -P $torrent_location/
-wget -r --no-directories --no-parent -A "Fedora-i3-*.torrent" -R  "*[Alpha,Beta]*" http://torrent.fedoraproject.org -P $torrent_location/
+wget -r --no-directories --no-parent -A "Fedora-KDE-*.torrent" -R  "*Alpha*,*Beta*" http://torrent.fedoraproject.org -P $torrent_location/
+wget -r --no-directories --no-parent -A "Fedora-Budgie-*.torrent" -R  "*Alpha*,*Beta*" http://torrent.fedoraproject.org -P $torrent_location/
+wget -r --no-directories --no-parent -A "Fedora-LXDE-*.torrent" -R  "*Alpha*,*Beta*" http://torrent.fedoraproject.org -P $torrent_location/
+wget -r --no-directories --no-parent -A "Fedora-LXQt-*.torrent" -R  "*Alpha*,*Beta*" http://torrent.fedoraproject.org -P $torrent_location/
+wget -r --no-directories --no-parent -A "Fedora-MATE-*.torrent" -R  "*Alpha*,*Beta*" http://torrent.fedoraproject.org -P $torrent_location/
+wget -r --no-directories --no-parent -A "Fedora-SoaS-*.torrent" -R  "*Alpha*,*Beta*" http://torrent.fedoraproject.org -P $torrent_location/
+wget -r --no-directories --no-parent -A "Fedora-Sway-*.torrent" -R  "*Alpha*,*Beta*" http://torrent.fedoraproject.org -P $torrent_location/
+wget -r --no-directories --no-parent -A "Fedora-Xfce-*.torrent" -R  "*Alpha*,*Beta*" http://torrent.fedoraproject.org -P $torrent_location/
+wget -r --no-directories --no-parent -A "Fedora-i3-*.torrent" -R  "*Alpha*,*Beta*" http://torrent.fedoraproject.org -P $torrent_location/
 
 #Fedora Atomics
-wget -r --no-directories --no-parent -A "Fedora-Kinoite-*.torrent" -R  "*[Alpha,Beta]*" http://torrent.fedoraproject.org -P $torrent_location/
-wget -r --no-directories --no-parent -A "Fedora-Silverblue-*.torrent" -R  "*[Alpha,Beta]*" http://torrent.fedoraproject.org -P $torrent_location/
+wget -r --no-directories --no-parent -A "Fedora-Kinoite-*.torrent" -R  "*Alpha*,*Beta*" http://torrent.fedoraproject.org -P $torrent_location/
+wget -r --no-directories --no-parent -A "Fedora-Silverblue-*.torrent" -R  "*Alpha*,*Beta*" http://torrent.fedoraproject.org -P $torrent_location/
 
 
 #Kali
@@ -95,3 +95,12 @@ wget -r --no-directories --no-parent -A "*.torrent" https://tails.net/torrents/f
 #cleanup
 #rm $torrent_location/robots.txt
 #rmdir $torrent_location/*
+
+#Remove Unwanted Arch's
+#rm $torrent_location/*i386*
+#rm $torrent_location/*amd64*
+#rm $torrent_location/*x86_64*
+#rm $torrent_location/*arm*
+#rm $torrent_location/*ppc64le*
+#rm $torrent_location/*aarch64*
+#rm $torrent_location/*s390x*
