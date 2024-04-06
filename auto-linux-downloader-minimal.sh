@@ -3,13 +3,12 @@
 #
 # Author: Peter Paskowsky
 #
+# Updated by: AlexW-578
+#
 # This script automatically downloads .torrent files for Linux distributions
 # Paired with a torrent client this creates an automated Linux iso seed box.
 # I just chose to download the most common torrents for each distro, but 
 # this script could be edited to download just the torrents you would like.
-#
-# You can find the .torrent files output by this script at the link below
-# http://users.silenceisdefeat.net/~petes/minimal-torrents/
 #
 # To add this as a cronjob, run crontab -e and add something like the line below
 # 
@@ -17,7 +16,7 @@
 #
 
 #torrent client's watch directory
-torrent_location=/root/watch/
+torrent_location=./watch/
 
 
 #Delete old torrents betfore starting
@@ -27,26 +26,20 @@ torrent_location=/root/watch/
 ################# FTP ##################
 
 
-#Arch Netinst Dual
-arch=ftp://mirror.rackspace.com/archlinux/iso/
-release=`curl -l $arch | sort -n -r | awk NR==1`
-wget $arch/$release/*dual.iso.torrent -P $torrent_location/
-
-
 #Ubuntu 
 ubuntu=ftp://releases.ubuntu.com/releases/
 release=`curl -l $ubuntu | sort -n -r | awk NR==1`
-wget -r -nH --cut-dirs=3 --no-parent -A "*.torrent" $ubuntu/$release/ -P $torrent_location/
+wget -r --no-directories --no-parent -A "*.torrent" $ubuntu/$release/ -P $torrent_location/
 
 
 #Debian DVD amd64 
 debian=ftp://cdimage.debian.org/cdimage/release/current/amd64/bt-dvd/
-wget -r -nH --cut-dirs=5 --no-parent -A "*.torrent" -R  "*update*" $debian/ -P $torrent_location/
+wget -r --no-directories --no-parent -A "*netinst*" -R "*[update,edu,mac]*" $debian/ -P $torrent_location/
 
 
 #Debian CD amd64 
 debian=ftp://cdimage.debian.org/cdimage/release/current/amd64/bt-cd/
-wget -r -nH --cut-dirs=5 --no-parent -A "*netinst*" -R  "*update*" $debian/ -P $torrent_location/
+wget -r --no-directories --no-parent -A "*netinst*" -R "*[update,edu,mac]*" $debian/ -P $torrent_location/
 
 
 ################# HTTP ##################
@@ -57,4 +50,12 @@ wget http://downloads.raspberrypi.org/raspbian_latest.torrent -O $torrent_locati
 
 
 #Kali
-wget -r -nH --cut-dirs=6 --no-parent -A "*.torrent" http://ftp.cc.uoc.gr/mirrors/linux/kali/kali-images/kali-latest/amd64/ -P $torrent_location/
+wget -r --no-directories --no-parent -A "*-live-*.torrent" https://cdimage.kali.org/current/ -P $torrent_location/
+
+
+#Arch
+wget -r --no-directories --no-parent -A "*.torrent" https://geo.mirror.pkgbuild.com/iso/latest/ -P $torrent_location/
+
+
+#Tails
+wget -r --no-directories --no-parent -A "*.torrent" https://tails.net/torrents/files/ -P $torrent_location/
